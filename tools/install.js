@@ -63,9 +63,10 @@ if (process.platform === 'win32') {
 	var dotnetPath = whereis('dotnet', 'dotnet.exe');
 
 	if (dotnetPath) {
+		console.log("running dotnet.exe")
 		spawn(dotnetPath, ['restore'], { stdio: 'inherit', cwd: path.resolve(__dirname, '..', 'lib', 'bootstrap') })
 			.on('close', function() {
-				spawn(dotnetPath, ['build', '--configuration', 'Release'], { stdio: 'inherit', cwd: path.resolve(__dirname, '..', 'lib', 'bootstrap') })
+				spawn(dotnetPath, ['build','--verbosity', 'd', '--configuration', 'Release'], { stdio: 'inherit', cwd: path.resolve(__dirname, '..', 'lib', 'bootstrap') })
 					.on('close', function() {
 						require('./checkplatform');
 					});
@@ -78,5 +79,6 @@ if (process.platform === 'win32') {
 } 
 
 else {
+	console.log("running node-gyp")
 	spawn('node-gyp', ['configure', 'build'], { stdio: 'inherit' });
 }

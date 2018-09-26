@@ -7,6 +7,7 @@ lib-cov
 *.pid
 *.gz
 *.lock.json
+*-lock.json
 
 pids
 logs
