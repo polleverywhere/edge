@@ -1,6 +1,6 @@
 {
   "name": "brock-edge",
-  "version": "8.2.1-electron.windows.3",
+  "version": "8.2.1-electron.1",
   "description": "Edge.js: run .NET and Node.js in-process on Windows, Mac OS, and Linux",
   "tags": [
     "owin",
