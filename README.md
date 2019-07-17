@@ -1728,6 +1728,16 @@ After you have compiled the stress tests, simply launch the executable, attach r
 C:\projects\edge\test\double\double_stress\bin\Release> double_stress.exe
 ```
 
+### Building Edge.js for Electron.js
+
+```
+cd /path-to-module/
+HOME=~/.electron-gyp node-gyp rebuild --target=5.0.7 --arch=x64 --dist-url=https://electronjs.org/headers
+```
+
+Or for convenience `npm start gyp-win` and `npm start gyp-mac`
+
+
 ## Use cases and other resources
 
 [Accessing MS SQL from Node.js via Edge.js](https://blog.codeship.com/node-js-sql-server-edge-js/) by [David Neal](https://twitter.com/reverentgeek)  
