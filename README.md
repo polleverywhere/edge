@@ -5,7 +5,21 @@ Edge.js: .NET and Node.js in-process [![Build Status](https://travis-ci.org/tjan
  
 An edge connects two nodes. This edge connects Node.js and .NET. V8 and CLR/.NET Core/Mono - in process. On Windows, MacOS, and Linux. 
 
-![image](https://cloud.githubusercontent.com/assets/822369/11969685/e9476f3a-a8d1-11e5-94d4-847bfc4ed960.png)
+| Script CLR from Node.js |
+| :---:                   |
+| Platform                | .Net 4.5           | Mono 4.x           | CoreCLR            |
+| :---:                   | :---:              | :---:              | :---:              |
+| Windows                 | :white_check_mark: |                    | :white_check_mark: |
+| Linux                   |                    | :white_check_mark: | :white_check_mark: |
+| macOS                   |                    | :white_check_mark: | :white_check_mark: |
+
+| Script Node.js from CLR |
+| :---:                   |
+| Platform                | .Net 4.5           | CoreCLR |
+| :---:                   | :---:              | :---:   |
+| Windows                 | :white_check_mark: | :soon:  |
+| Linux                   |                    | :soon:  |
+| macOS                   |                    | :soon:  |
 
 You can script C# from a Node.js process:
 
@@ -123,6 +137,7 @@ Listen to the [Edge.js podcast on Herdingcode](http://herdingcode.com/herding-co
 &nbsp;&nbsp;&nbsp;&nbsp;[How to: debug Node.js code running in a CLR application](#how-to-debug-nodejs-code-running-in-a-clr-application)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Building Edge.js NuGet package](#building-edgejs-nuget-package)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Running tests of scripting Node.js in C#](#running-tests-of-scripting-nodejs-in-c)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Building Edge.js for Electron.js](#building-edgejs-for-electronjs)  
 [Use cases and other resources](#use-cases-and-other-resources)  
 [Contribution and derived work](#contribution-and-derived-work)  
 
@@ -1731,12 +1746,8 @@ C:\projects\edge\test\double\double_stress\bin\Release> double_stress.exe
 ### Building Edge.js for Electron.js
 
 ```
-cd /path-to-module/
 HOME=~/.electron-gyp node-gyp rebuild --target=5.0.7 --arch=x64 --dist-url=https://electronjs.org/headers
 ```
-
-Or for convenience `npm start gyp-win` and `npm start gyp-mac`
-
 
 ## Use cases and other resources
 
