@@ -59,7 +59,7 @@ if not exist "%GYP%" (
     )
 )
 
-"%NODEEXE%" "%GYP%" configure build --msvs_version=2015 -%FLAVOR%
+"%NODEEXE%" "%GYP%" configure build  -%FLAVOR%
 if %ERRORLEVEL% neq 0 (
     echo Error building edge.node %FLAVOR% for node.js %2 v%3
     exit /b -1
